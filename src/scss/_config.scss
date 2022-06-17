@@ -1,0 +1,77 @@
+$clr-primary: #345769;
+$clr-primary-2: #1d3646;
+$clr-primary-3: #16222a;
+$clr-red: #e76161;
+$clr-red-2: #ca4242;
+$clr-blue: #449dd4;
+$clr-blue-2: #1574af;
+$clr-yellow: #e1c634;
+$clr-yellow-2: #bda416;
+$clr-black: #1c1c1c;
+$clr-white: #ffffff;
+$clr-gray: #757579;
+$max-content-width: 1200px;
+$radius: 0.25rem;
+$spacing: 0.1rem;
+$shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+$trans-ease: all 0.4s ease;
+
+$sizes: (
+    sm: '(max-width: 500px)',
+    md: '(max-width: 768px)',
+    lg: '(max-width: 1024px)',
+);
+
+@mixin for-size($size) {
+    // If the key exists in the map
+    @if map-has-key($sizes, $size) {
+        // Prints a media query based on the value
+        @media screen and #{map-get($sizes, $size)} {
+            @content;
+        }
+    }
+    // If the key doesn't exist in the map
+    @else {
+        @warn "Warning: no value could be retrieved from `#{$size}`. "
+        + "Available sizes are: #{map-keys($sizes)}.";
+    }
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin absolute($args...) {
+    @include position(absolute, $args...);
+}
+
+@mixin fixed($args...) {
+    @include position(fixed, $args...);
+}
+
+@mixin grid-center {
+    display: grid;
+    place-items: center;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin circle($diameter) {
+    width: $diameter;
+    height: $diameter;
+    border-radius: 50%;
+}
