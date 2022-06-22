@@ -1,0 +1,34 @@
+.characters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    article {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        img {
+            width: 100%;
+            border: 2px solid $clr-red;
+            border-radius: $radius;
+        }
+        h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        p {
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        &:nth-child(even) {
+            img {
+                border-color: $clr-blue;
+            }
+            .btn {
+                background-color: $clr-blue;
+                &:hover {
+                    background-color: $clr-blue-2;
+                }
+            }
+        }
+    }
+}

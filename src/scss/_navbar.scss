@@ -1,0 +1,21 @@
+.navbar {
+    background-color: $clr-primary-2;
+    &-menu {
+        height: 3rem;
+        display: flex;
+        justify-content: flex-end;
+        a {
+            width: 8rem;
+            height: 100%;
+            @include grid-center;
+            color: $clr-white;
+            text-transform: capitalize;
+            letter-spacing: $spacing;
+            transition: $trans-ease;
+            &:hover,
+            &.active {
+                background-color: $clr-red-2;
+            }
+        }
+    }
+}

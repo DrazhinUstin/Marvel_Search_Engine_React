@@ -40,7 +40,9 @@
     input {
         border-radius: $radius 0 0 $radius;
         & ~ button {
+            padding: 0 0.75rem;
             border-radius: 0 $radius $radius 0;
+            font-size: 1.25rem;
         }
     }
 }

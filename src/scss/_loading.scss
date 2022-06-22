@@ -1,0 +1,28 @@
+.loading {
+    @include fixed(0, 0, 0, 0);
+    @include grid-center;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    & > div {
+        width: 3.5rem;
+        height: 3.5rem;
+        @include grid-center;
+        border-radius: $radius;
+        background-color: $clr-white;
+        span {
+            @include circle(2rem);
+            border: 0.25rem solid $clr-red-2;
+            border-right-color: transparent;
+            animation: spinner 0.6s linear 0s infinite;
+        }
+    }
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

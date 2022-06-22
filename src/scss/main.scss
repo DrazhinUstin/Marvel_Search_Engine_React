@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 @import 'config';
+@import 'loading';
 @import 'btn';
 @import 'form';
+@import 'navbar';
+@import 'characters';
 
 *,
 ::before,
@@ -75,5 +78,17 @@ button {
         h3 {
             font-size: 2rem;
         }
+    }
+}
+
+.items-counter {
+    text-align: right;
+    text-transform: capitalize;
+    letter-spacing: $spacing;
+    margin: 4rem 0;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid $clr-white;
+    span {
+        color: $clr-yellow;
     }
 }
