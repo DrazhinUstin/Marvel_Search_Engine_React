@@ -1,0 +1,49 @@
+.comics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    article {
+        position: relative;
+        align-self: flex-start;
+        border: 2px solid $clr-red-2;
+        border-radius: $radius;
+        img {
+            width: 100%;
+        }
+        footer {
+            @include absolute($bottom: 0, $left: 0);
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            @include grid-center;
+            padding: 0 0.5rem;
+            background-color: $clr-transp-red;
+            text-align: center;
+            transition: $trans-ease;
+            h4 {
+                margin-bottom: 0.75rem;
+                line-height: 1.25;
+            }
+            .btn {
+                border: 1px solid $clr-white;
+                background-color: transparent;
+                &:hover {
+                    background-color: $clr-white;
+                    color: $clr-red-2;
+                }
+            }
+        }
+        &:hover footer {
+            height: 100%;
+        }
+        &:nth-child(even) {
+            border-color: $clr-blue-2;
+            footer {
+                background-color: $clr-transp-blue;
+                .btn:hover {
+                    color: $clr-blue-2;
+                }
+            }
+        }
+    }
+}

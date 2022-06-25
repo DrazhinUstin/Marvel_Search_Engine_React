@@ -7,6 +7,38 @@
             margin-bottom: 0.5rem;
             letter-spacing: $spacing;
         }
+        &.checkbox {
+            margin-bottom: unset;
+            margin: 1.5rem 0;
+            label {
+                position: relative;
+                display: flex;
+                align-items: center;
+                column-gap: 0.75rem;
+                margin-bottom: unset;
+                &::before {
+                    content: '';
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    background-color: $clr-white;
+                }
+                &::after {
+                    content: '';
+                    @include absolute($left: 0.75rem);
+                    transform: translateX(-50%) scale(0);
+                    width: 1.25rem;
+                    height: 1.25rem;
+                    background-color: $clr-red-2;
+                    transition: $trans-ease;
+                }
+            }
+            input {
+                display: none;
+                &:checked ~ label::after {
+                    transform: translateX(-50%) scale(1);
+                }
+            }
+        }
     }
     input,
     select {
@@ -30,6 +62,9 @@
         &::placeholder {
             color: $clr-gray;
         }
+    }
+    select {
+        text-transform: capitalize;
     }
 }
 
