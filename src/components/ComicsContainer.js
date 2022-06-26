@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import ItemsCounter from './ItemsCounter';
 
 const ComicsContainer = () => {
@@ -20,7 +21,9 @@ const ComicsContainer = () => {
                             <footer>
                                 <div>
                                     <h4>{title}</h4>
-                                    <button className='btn'>watch</button>
+                                    <Link to={`/comics/${id}`} className='btn'>
+                                        watch
+                                    </Link>
                                 </div>
                             </footer>
                         </article>

@@ -1,0 +1,25 @@
+.single-comic {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    @include for-size(md) {
+        grid-template-columns: unset;
+    }
+    img {
+        width: 100%;
+        border: 2px solid $clr-red;
+        border-radius: $radius;
+    }
+    h4,
+    p {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        span {
+            color: $clr-yellow;
+        }
+    }
+    .btn-container {
+        justify-content: unset;
+        margin-bottom: 1.5rem;
+    }
+}
