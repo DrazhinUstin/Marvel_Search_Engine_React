@@ -17,6 +17,12 @@ const Navbar = () => {
                     <NavLink to='comics' className={({ isActive }) => (isActive ? 'active' : null)}>
                         comics
                     </NavLink>
+                    <NavLink
+                        to='favorites'
+                        className={({ isActive }) => (isActive ? 'active' : null)}
+                    >
+                        favorites
+                    </NavLink>
                 </div>
             </div>
         </nav>

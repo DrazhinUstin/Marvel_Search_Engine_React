@@ -1,9 +1,7 @@
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ItemsCounter from './ItemsCounter';
 
-const ComicsContainer = () => {
-    const { items } = useSelector((state) => state.comics);
+const ComicsContainer = ({ items }) => {
     if (!items.length) return null;
     return (
         <>

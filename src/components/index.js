@@ -5,6 +5,7 @@ import ItemsCounter from './ItemsCounter';
 import CharactersContainer from './CharactersContainer';
 import ComicsContainer from './ComicsContainer';
 import LoadMoreBtn from './LoadMoreBtn';
+import AddToFavoritesBtn from './AddToFavoritesBtn';
 
 export {
     Loading,
@@ -14,4 +15,5 @@ export {
     CharactersContainer,
     ComicsContainer,
     LoadMoreBtn,
+    AddToFavoritesBtn,
 };

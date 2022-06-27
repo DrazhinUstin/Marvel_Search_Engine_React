@@ -108,7 +108,7 @@ const ComicsPage = () => {
                         </button>
                     </div>
                 </form>
-                <ComicsContainer />
+                <ComicsContainer items={items} />
                 {total > items.length && (
                     <LoadMoreBtn onClick={() => dispatch(getComics(offset + limit))} />
                 )}

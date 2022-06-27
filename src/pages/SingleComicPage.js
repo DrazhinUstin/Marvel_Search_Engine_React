@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import useAxios from '../utils/useAxios';
-import { Loading } from '../components';
+import { Loading, AddToFavoritesBtn } from '../components';
 import ErrorPage from '../pages/ErrorPage';
 
 const SingleComicPage = () => {
@@ -67,6 +67,7 @@ const SingleComicPage = () => {
                     </a>
                 </article>
             </div>
+            <AddToFavoritesBtn item={{ id, title, thumbnail: { path, extension } }} />
         </section>
     );
 };

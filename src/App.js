@@ -1,5 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { HomePage, CharactersPage, ComicsPage, SingleComicPage, ErrorPage } from './pages';
+import {
+    HomePage,
+    CharactersPage,
+    ComicsPage,
+    SingleComicPage,
+    FavoritesPage,
+    ErrorPage,
+} from './pages';
 import { Navbar } from './components';
 
 const App = () => {
@@ -11,6 +18,7 @@ const App = () => {
                 <Route path='characters' element={<CharactersPage />} />
                 <Route path='comics' element={<ComicsPage />} />
                 <Route path='comics/:id' element={<SingleComicPage />} />
+                <Route path='favorites' element={<FavoritesPage />} />
                 <Route path='*' element={<ErrorPage />} />
             </Routes>
         </Router>
