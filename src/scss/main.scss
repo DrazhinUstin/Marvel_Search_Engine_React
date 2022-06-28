@@ -117,3 +117,9 @@ input[type='number'] {
 .hide {
     display: none;
 }
+
+@keyframes surprise {
+    100% {
+        transform: translateX(0);
+    }
+}

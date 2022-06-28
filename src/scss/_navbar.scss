@@ -1,9 +1,12 @@
 .navbar {
     background-color: $clr-primary-2;
-    &-menu {
+    .section-center {
         height: 3rem;
         display: flex;
         justify-content: flex-end;
+    }
+    &-menu {
+        display: flex;
         a {
             width: 8rem;
             height: 100%;
@@ -12,9 +15,101 @@
             text-transform: capitalize;
             letter-spacing: $spacing;
             transition: $trans-ease;
+            transition-property: background-color;
             &:hover,
             &.active {
                 background-color: $clr-red-2;
+            }
+            &:last-child {
+                position: relative;
+                span {
+                    @include absolute($top: 0.25rem, $right: 0);
+                    @include circle(1.25rem);
+                    @include grid-center;
+                    background-color: $clr-red;
+                    font-size: 0.8rem;
+                    transition: inherit;
+                }
+                &:hover span,
+                &.active span {
+                    background-color: $clr-blue;
+                }
+            }
+        }
+    }
+    &-toggle-btn {
+        display: none;
+        border: none;
+        background-color: inherit;
+    }
+    @include for-size(md) {
+        .section-center {
+            width: 100%;
+        }
+        &-menu {
+            @include fixed(3rem, 0, 0, 0);
+            transform: translateX(100%);
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: $clr-transp-primary;
+            transition: $trans-ease-in-out;
+            transition-property: transform;
+            z-index: 999;
+            &.open {
+                transform: translateX(0);
+            }
+            a {
+                width: unset;
+                height: unset;
+                transform: translateX(50rem);
+                font-size: 1.5rem;
+                &:hover,
+                &.active {
+                    background-color: unset;
+                }
+                &:last-child span {
+                    top: -0.5rem;
+                    right: -1.25rem;
+                }
+            }
+        }
+        &-toggle-btn {
+            width: 2.5rem;
+            height: 100%;
+            @include grid-center;
+            span {
+                position: relative;
+                width: 1.5rem;
+                height: 3px;
+                background-color: $clr-white;
+                transition: $trans-ease-in-out;
+                &::before,
+                &::after {
+                    content: '';
+                    @include absolute($top: -8px, $left: 0);
+                    width: inherit;
+                    height: inherit;
+                    background-color: $clr-white;
+                    transition: inherit;
+                }
+                &::after {
+                    top: 8px;
+                }
+            }
+            &.active {
+                background-color: $clr-red-2;
+                span {
+                    background-color: transparent;
+                    &::before {
+                        top: 0;
+                        transform: rotate(225deg);
+                    }
+                    &::after {
+                        top: 0;
+                        transform: rotate(-225deg);
+                    }
+                }
             }
         }
     }
