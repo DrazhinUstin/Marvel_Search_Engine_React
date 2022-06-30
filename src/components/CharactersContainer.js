@@ -23,7 +23,7 @@ const CharactersContainer = () => {
                             <div>
                                 <h4>{name}</h4>
                                 <p>{cutString(description)}</p>
-                                <Link to='/' className='btn'>
+                                <Link to={`/characters/${id}`} className='btn'>
                                     view profile
                                 </Link>
                             </div>

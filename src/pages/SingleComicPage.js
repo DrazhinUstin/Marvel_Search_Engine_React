@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import useAxios from '../utils/useAxios';
 import { Loading, PageHeader, CrumbTrail, AddToFavoritesBtn } from '../components';
 import ErrorPage from '../pages/ErrorPage';
@@ -59,11 +59,17 @@ const SingleComicPage = () => {
                             <>
                                 <h4>characters:</h4>
                                 <div className='btn-container'>
-                                    {items.map((item, index) => {
+                                    {items.map(({ resourceURI: source, name }, index) => {
                                         return (
-                                            <button key={index} className='btn blue'>
-                                                {item.name}
-                                            </button>
+                                            <Link
+                                                key={index}
+                                                to={`/characters${source.slice(
+                                                    source.lastIndexOf('/')
+                                                )}`}
+                                                className='btn blue'
+                                            >
+                                                {name}
+                                            </Link>
                                         );
                                     })}
                                 </div>

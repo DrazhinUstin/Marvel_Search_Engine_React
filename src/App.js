@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
     HomePage,
     CharactersPage,
+    SingleCharacterPage,
     ComicsPage,
     SingleComicPage,
     FavoritesPage,
@@ -16,6 +17,7 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<HomePage />} />
                 <Route path='characters' element={<CharactersPage />} />
+                <Route path='characters/:id' element={<SingleCharacterPage />} />
                 <Route path='comics' element={<ComicsPage />} />
                 <Route path='comics/:id' element={<SingleComicPage />} />
                 <Route path='favorites' element={<FavoritesPage />} />

@@ -1,4 +1,5 @@
-.single-comic {
+.single-comic,
+.single-character {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
@@ -20,6 +21,10 @@
     }
     .btn-container {
         justify-content: unset;
+        gap: 0.5rem;
         margin-bottom: 1.5rem;
+        .btn {
+            letter-spacing: unset;
+        }
     }
 }
