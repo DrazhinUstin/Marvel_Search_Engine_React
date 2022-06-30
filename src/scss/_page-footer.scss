@@ -9,6 +9,7 @@
         flex-flow: column wrap;
         gap: 0.25rem;
         a {
+            position: relative;
             display: inline-block;
             padding: 0.25rem 0.5rem;
             border-radius: $radius;
@@ -18,19 +19,12 @@
             &:hover {
                 background-color: $clr-red-2;
             }
+            .favorites-counter {
+                @include absolute($top: -0.25rem, $right: -0.75rem);
+            }
         }
         li:nth-child(even) a:hover {
             background-color: $clr-blue-2;
-        }
-        li:last-child a {
-            position: relative;
-            span {
-                @include absolute($top: -0.25rem, $right: -0.75rem);
-                @include circle(1.25rem);
-                @include grid-center;
-                background-color: $clr-red;
-                font-size: 0.8rem;
-            }
         }
     }
     &-underline {

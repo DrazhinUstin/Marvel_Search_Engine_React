@@ -1,11 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
-import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { navLinks } from '../utils/localData';
+import { FavoritesCounter } from './';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const { items } = useSelector((state) => state.favorites);
     const menuRef = useRef(null);
 
     useEffect(() => {
@@ -40,7 +39,7 @@ const Navbar = () => {
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {title}
-                                {title === 'favorites' && <span>{items.length}</span>}
+                                {title === 'favorites' && <FavoritesCounter />}
                             </NavLink>
                         );
                     })}

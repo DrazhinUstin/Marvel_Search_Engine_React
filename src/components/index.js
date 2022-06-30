@@ -10,6 +10,7 @@ import ComicsContainer from './ComicsContainer';
 import LoadMoreBtn from './LoadMoreBtn';
 import AddToFavoritesBtn from './AddToFavoritesBtn';
 import NoFavorites from './NoFavorites';
+import FavoritesCounter from './FavoritesCounter';
 import PageFooter from './PageFooter';
 
 export {
@@ -25,5 +26,6 @@ export {
     LoadMoreBtn,
     AddToFavoritesBtn,
     NoFavorites,
+    FavoritesCounter,
     PageFooter,
 };

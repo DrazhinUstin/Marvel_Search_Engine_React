@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom';
 import { Logo } from './';
 import characters from '../assets/characters.jpg';
 
-const PageHeader = ({ children, title, image = characters, position = 'center' }) => {
+const PageHeader = ({ children, title, link, image = characters, position = 'center' }) => {
     return (
         <header
             className='page-header'
@@ -11,7 +12,14 @@ const PageHeader = ({ children, title, image = characters, position = 'center' }
             }}
         >
             {children}
-            <Logo title={title} />
+            <div className='page-header-container'>
+                <Logo title={title} />
+                {link && (
+                    <Link to={link.path} className='border-btn blue'>
+                        {link.title}
+                    </Link>
+                )}
+            </div>
         </header>
     );
 };

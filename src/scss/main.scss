@@ -104,6 +104,12 @@ input[type='number'] {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url('../assets/characters.jpg') no-repeat center/cover;
     @include grid-center;
+    &-container {
+        text-align: center;
+        a {
+            margin-top: 1rem;
+        }
+    }
 }
 
 .logo {
@@ -130,6 +136,13 @@ input[type='number'] {
     span {
         color: $clr-yellow;
     }
+}
+
+.favorites-counter {
+    @include circle(1.25rem);
+    @include grid-center;
+    background-color: $clr-red;
+    font-size: 0.8rem;
 }
 
 .btn-container {

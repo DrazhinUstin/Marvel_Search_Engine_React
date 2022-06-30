@@ -8,6 +8,7 @@
     &-menu {
         display: flex;
         a {
+            position: relative;
             width: 8rem;
             height: 100%;
             @include grid-center;
@@ -19,21 +20,13 @@
             &:hover,
             &.active {
                 background-color: $clr-red-2;
-            }
-            &:last-child {
-                position: relative;
-                span {
-                    @include absolute($top: 0.25rem, $right: 0);
-                    @include circle(1.25rem);
-                    @include grid-center;
-                    background-color: $clr-red;
-                    font-size: 0.8rem;
-                    transition: inherit;
-                }
-                &:hover span,
-                &.active span {
+                .favorites-counter {
                     background-color: $clr-blue;
                 }
+            }
+            .favorites-counter {
+                @include absolute($top: 0.25rem, $right: 0);
+                transition: inherit;
             }
         }
     }
@@ -68,8 +61,8 @@
                 &.active {
                     background-color: unset;
                 }
-                &:last-child span {
-                    top: -0.5rem;
+                .favorites-counter {
+                    top: -0.25rem;
                     right: -1.25rem;
                 }
             }

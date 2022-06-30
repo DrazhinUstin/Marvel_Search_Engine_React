@@ -1,10 +1,8 @@
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Logo } from './';
+import { Logo, FavoritesCounter } from './';
 import { navLinks } from '../utils/localData';
 
 const PageFooter = () => {
-    const { items } = useSelector((state) => state.favorites);
     return (
         <footer className='page-footer'>
             <div className='section section-center'>
@@ -16,7 +14,7 @@ const PageFooter = () => {
                                 <li key={id}>
                                     <Link to={path}>
                                         {title}
-                                        {title === 'favorites' && <span>{items.length}</span>}
+                                        {title === 'favorites' && <FavoritesCounter />}
                                     </Link>
                                 </li>
                             );
