@@ -1,4 +1,4 @@
-import { ReactComponent as LogoSvg } from '../assets/marvel_logo.svg';
+import { Logo } from './';
 import characters from '../assets/characters.jpg';
 
 const PageHeader = ({ children, title, image = characters, position = 'center' }) => {
@@ -11,10 +11,7 @@ const PageHeader = ({ children, title, image = characters, position = 'center' }
             }}
         >
             {children}
-            <div className='logo'>
-                <LogoSvg />
-                {title}
-            </div>
+            <Logo title={title} />
         </header>
     );
 };

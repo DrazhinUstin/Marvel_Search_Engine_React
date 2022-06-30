@@ -1,0 +1,60 @@
+.page-footer {
+    border-top: 0.5rem solid $clr-red-2;
+    &-container {
+        @include flex-center;
+        gap: 2rem 4rem;
+    }
+    &-links {
+        display: flex;
+        flex-flow: column wrap;
+        gap: 0.25rem;
+        a {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: $radius;
+            color: $clr-white;
+            text-transform: uppercase;
+            letter-spacing: $spacing;
+            &:hover {
+                background-color: $clr-red-2;
+            }
+        }
+        li:nth-child(even) a:hover {
+            background-color: $clr-blue-2;
+        }
+        li:last-child a {
+            position: relative;
+            span {
+                @include absolute($top: -0.25rem, $right: -0.75rem);
+                @include circle(1.25rem);
+                @include grid-center;
+                background-color: $clr-red;
+                font-size: 0.8rem;
+            }
+        }
+    }
+    &-underline {
+        width: 12rem;
+        height: 0.25rem;
+        margin: 2rem auto;
+        background-color: $clr-blue-2;
+    }
+    p {
+        text-align: center;
+        font-size: 1.2rem;
+        font-style: italic;
+        letter-spacing: $spacing;
+    }
+    @include for-size(md) {
+        &-container {
+            flex-direction: column;
+        }
+        &-links {
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+        p {
+            font-size: 1rem;
+        }
+    }
+}

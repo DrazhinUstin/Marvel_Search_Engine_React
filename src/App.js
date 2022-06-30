@@ -7,7 +7,7 @@ import {
     FavoritesPage,
     ErrorPage,
 } from './pages';
-import { Navbar } from './components';
+import { Navbar, PageFooter } from './components';
 
 const App = () => {
     return (
@@ -21,6 +21,7 @@ const App = () => {
                 <Route path='favorites' element={<FavoritesPage />} />
                 <Route path='*' element={<ErrorPage />} />
             </Routes>
+            <PageFooter />
         </Router>
     );
 };
