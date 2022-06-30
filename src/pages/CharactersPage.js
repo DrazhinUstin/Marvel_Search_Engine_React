@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateValues, getCharacters } from '../features/characters/charactersSlice';
-import { Loading, CharactersContainer, LoadMoreBtn } from '../components';
+import { Loading, PageHeader, CrumbTrail, CharactersContainer, LoadMoreBtn } from '../components';
 import { FaSearch } from 'react-icons/fa';
 
 const CharactersPage = () => {
@@ -38,6 +38,9 @@ const CharactersPage = () => {
     return (
         <>
             {isLoading && <Loading />}
+            <PageHeader title='heroes area'>
+                <CrumbTrail title='heroes' />
+            </PageHeader>
             <section className='section section-center'>
                 <form className='form-flex' onSubmit={handleSubmit}>
                     <input

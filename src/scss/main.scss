@@ -4,6 +4,7 @@
 @import 'btn';
 @import 'form';
 @import 'navbar';
+@import 'crumb-trail';
 @import 'characters';
 @import 'comics';
 @import 'single-comic';
@@ -93,6 +94,28 @@ input[type='number'] {
         h3 {
             font-size: 2rem;
         }
+    }
+}
+
+.page-header {
+    position: relative;
+    min-height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('../assets/characters.jpg') no-repeat center/cover;
+    @include grid-center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    line-height: 1;
+    svg {
+        width: 10rem;
+        height: auto;
     }
 }
 

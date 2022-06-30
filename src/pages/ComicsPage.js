@@ -6,7 +6,15 @@ import {
     updateFilters,
     clearFilters,
 } from '../features/comics/comicsSlice';
-import { Loading, FormField, ComicsContainer, LoadMoreBtn } from '../components';
+import {
+    Loading,
+    PageHeader,
+    CrumbTrail,
+    FormField,
+    ComicsContainer,
+    LoadMoreBtn,
+} from '../components';
+import image from '../assets/characters_3.jpg';
 
 const ComicsPage = () => {
     const { isLoading, areFiltersHidden, filters, offset, limit, items, total } = useSelector(
@@ -36,6 +44,9 @@ const ComicsPage = () => {
     return (
         <>
             {isLoading && <Loading />}
+            <PageHeader title='comics area' image={image} position='bottom'>
+                <CrumbTrail title='comics' />
+            </PageHeader>
             <section className='section section-center'>
                 <div style={{ marginBottom: '4rem' }}>
                     <button className='border-btn blue' onClick={() => dispatch(toggleFilters())}>
