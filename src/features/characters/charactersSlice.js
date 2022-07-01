@@ -12,7 +12,7 @@ export const getCharacters = createAsyncThunk('characters/getCharacters', async 
 });
 
 const initialState = {
-    isLoading: false,
+    isLoading: true,
     name: '',
     offset: 0,
     limit: axios.defaults.params.limit,

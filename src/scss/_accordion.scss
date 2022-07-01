@@ -1,0 +1,40 @@
+.accordion {
+    display: grid;
+    row-gap: 0.5rem;
+    &-item {
+        border-radius: $radius;
+        background-color: $clr-blue;
+        transition: $trans-ease;
+        &-header {
+            padding: 0.75rem 1rem;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            column-gap: 1rem;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            svg {
+                transition: $trans-ease;
+            }
+        }
+        &-content {
+            height: 0;
+            overflow: hidden;
+            padding: 0 1rem;
+            transition: $trans-ease;
+            & > article {
+                padding: 0.75rem 0;
+                border-top: 1px solid $clr-white;
+                & > *:not(:last-child) {
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+        &.active {
+            background-color: $clr-red-2;
+            .accordion-item-header svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

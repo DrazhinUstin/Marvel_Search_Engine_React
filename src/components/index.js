@@ -11,6 +11,7 @@ import LoadMoreBtn from './LoadMoreBtn';
 import AddToFavoritesBtn from './AddToFavoritesBtn';
 import NoFavorites from './NoFavorites';
 import FavoritesCounter from './FavoritesCounter';
+import Accordion from './Accordion';
 import PageFooter from './PageFooter';
 
 export {
@@ -27,5 +28,6 @@ export {
     AddToFavoritesBtn,
     NoFavorites,
     FavoritesCounter,
+    Accordion,
     PageFooter,
 };
