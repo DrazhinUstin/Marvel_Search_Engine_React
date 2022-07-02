@@ -1,5 +1,6 @@
 import Loading from './Loading';
 import Navbar from './Navbar';
+import HeroSlider from './HeroSlider';
 import PageHeader from './PageHeader';
 import CrumbTrail from './CrumbTrail';
 import Logo from './Logo';
@@ -17,6 +18,7 @@ import PageFooter from './PageFooter';
 export {
     Loading,
     Navbar,
+    HeroSlider,
     PageHeader,
     CrumbTrail,
     Logo,

@@ -1,7 +1,7 @@
 .navbar {
     background-color: $clr-primary-2;
     .section-center {
-        height: 3rem;
+        height: $navbar-height;
         display: flex;
         justify-content: flex-end;
     }
@@ -40,7 +40,7 @@
             width: 100%;
         }
         &-menu {
-            @include fixed(3rem, 0, 0, 0);
+            @include fixed($navbar-height, 0, 0, 0);
             transform: translateX(100%);
             flex-direction: column;
             justify-content: space-evenly;

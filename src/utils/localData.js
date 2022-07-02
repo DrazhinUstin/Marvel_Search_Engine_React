@@ -1,3 +1,27 @@
+import image_1 from '../assets/characters.jpg';
+import image_2 from '../assets/characters_2.jpg';
+import image_3 from '../assets/characters_3.jpg';
+import image_4 from '../assets/spider.jpg';
+
+const images = [
+    {
+        id: 1,
+        image: image_1,
+    },
+    {
+        id: 2,
+        image: image_2,
+    },
+    {
+        id: 3,
+        image: image_3,
+    },
+    {
+        id: 4,
+        image: image_4,
+    },
+];
+
 const navLinks = [
     {
         id: 1,
@@ -44,4 +68,4 @@ const faqData = [
     },
 ];
 
-export { navLinks, faqData };
+export { images, navLinks, faqData };
