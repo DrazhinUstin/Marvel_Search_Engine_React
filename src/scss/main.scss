@@ -9,6 +9,7 @@
 @import 'characters';
 @import 'comics';
 @import 'single-comic';
+@import 'carousel';
 @import 'accordion';
 @import 'page-footer';
 
@@ -89,6 +90,7 @@ input[type='number'] {
     }
     &-title {
         margin-bottom: 4rem;
+        @include flex-center;
         text-align: center;
         font-size: 1.75rem;
         h2 {
@@ -96,6 +98,12 @@ input[type='number'] {
         }
         h3 {
             font-size: 2rem;
+        }
+        .favorites-counter {
+            align-self: flex-start;
+            width: 1.5rem;
+            height: 1.5rem;
+            font-size: 0.95rem;
         }
     }
 }

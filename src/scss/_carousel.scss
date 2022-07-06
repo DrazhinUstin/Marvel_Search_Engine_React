@@ -1,0 +1,73 @@
+.carousel {
+    position: relative;
+    overflow-x: hidden;
+    user-select: none;
+    &-slides {
+        display: flex;
+        transition: $trans-ease;
+        article {
+            flex: 0 0 calc(100% / 3);
+            padding: 0 0.5rem;
+            img {
+                width: 100%;
+                border: 2px solid $clr-red-2;
+                border-radius: $radius $radius 0 0;
+            }
+            footer {
+                padding: 0.375rem;
+                border-radius: 0 0 $radius $radius;
+                background-color: $clr-red-2;
+                text-align: center;
+                a {
+                    color: $clr-white;
+                    text-transform: uppercase;
+                }
+            }
+            &:nth-child(odd) {
+                img {
+                    border-color: $clr-blue;
+                }
+                footer {
+                    background-color: $clr-blue;
+                }
+            }
+            @include for-size(md) {
+                flex: 0 0 50%;
+            }
+            @include for-size(sm) {
+                flex: 0 0 100%;
+            }
+        }
+    }
+    &-control-btn {
+        @include absolute($top: 50%, $left: 0);
+        transform: translateY(-50%);
+        @include circle(2.5rem);
+        @include grid-center;
+        border: none;
+        background-color: $clr-red-2;
+        color: $clr-white;
+        font-size: 2rem;
+        & ~ & {
+            left: unset;
+            right: 0;
+        }
+    }
+    &-stages {
+        @include flex-center;
+        flex-flow: row wrap;
+        gap: 0.5rem;
+        margin-top: 2rem;
+        button {
+            width: 0.75rem;
+            height: 0.75rem;
+            border: none;
+            background-color: $clr-transp-blue;
+            transition: $trans-ease;
+            &.active {
+                transform: scale(1.2);
+                background-color: $clr-blue;
+            }
+        }
+    }
+}
