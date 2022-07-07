@@ -43,7 +43,7 @@ const SingleComicPage = () => {
                 <div className='single-comic'>
                     <img src={`${path}.${extension}`} alt={title} />
                     <article>
-                        {description && <p>{description}</p>}
+                        {description && <p dangerouslySetInnerHTML={{ __html: description }} />}
                         <h4>
                             format: <span>{format}</span>
                         </h4>

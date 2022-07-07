@@ -5,6 +5,7 @@ import {
     HeroSlider,
     FavoritesCounter,
     NoFavorites,
+    ComicsContainer,
     Carousel,
     Accordion,
 } from '../components';
@@ -28,7 +29,11 @@ const HomePage = () => {
                     <NoFavorites />
                 ) : (
                     <>
-                        <Carousel data={favorites} />
+                        {favorites.length < 4 ? (
+                            <ComicsContainer items={favorites} counter={false} />
+                        ) : (
+                            <Carousel data={favorites} />
+                        )}
                         <div style={{ textAlign: 'center', marginTop: '2rem' }}>
                             <Link to='/favorites' className='border-btn'>
                                 watch favorites

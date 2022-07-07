@@ -19,6 +19,9 @@
             color: $clr-yellow;
         }
     }
+    p {
+        font-style: italic;
+    }
     .btn-container {
         justify-content: unset;
         gap: 0.5rem;

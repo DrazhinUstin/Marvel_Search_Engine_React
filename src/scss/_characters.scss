@@ -2,10 +2,16 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    @include for-size(lg) {
+        grid-template-columns: unset;
+    }
     article {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        gap: 1rem 2rem;
+        @include for-size(md) {
+            grid-template-columns: unset;
+        }
         img {
             width: 100%;
             border: 2px solid $clr-red;

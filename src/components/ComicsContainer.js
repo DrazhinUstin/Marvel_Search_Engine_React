@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import ItemsCounter from './ItemsCounter';
 
-const ComicsContainer = ({ items }) => {
+const ComicsContainer = ({ items, counter = true }) => {
     if (!items.length) return null;
     return (
         <>
-            <ItemsCounter items={items} />
+            {counter && <ItemsCounter items={items} />}
             <div className='comics'>
                 {items.map((item) => {
                     const {
