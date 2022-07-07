@@ -176,6 +176,12 @@ input[type='number'] {
     display: none;
 }
 
+@keyframes spinner {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes surprise {
     100% {
         transform: translateX(0);

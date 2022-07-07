@@ -20,7 +20,7 @@
                 text-align: center;
                 a {
                     color: $clr-white;
-                    text-transform: uppercase;
+                    text-transform: capitalize;
                 }
             }
             &:nth-child(odd) {

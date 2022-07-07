@@ -83,12 +83,14 @@ const Carousel = ({ data }) => {
                     onTouchEnd={endSwipe}
                     onDragStart={(e) => e.preventDefault()}
                 >
-                    {data.map(({ id, title, thumbnail: { path, extension } }) => {
+                    {data.map(({ id, name, title, thumbnail: { path, extension } }) => {
                         return (
                             <article key={id}>
-                                <img src={`${path}.${extension}`} alt={title} />
+                                <img src={`${path}.${extension}`} alt={name || title} />
                                 <footer>
-                                    <Link to={`/comics/${id}`}>watch</Link>
+                                    <Link to={`/${name ? 'characters' : 'comics'}/${id}`}>
+                                        {name ? name : 'WATCH'}
+                                    </Link>
                                 </footer>
                             </article>
                         );
