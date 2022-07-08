@@ -1,0 +1,19 @@
+.scroll-up-btn {
+    @include fixed($bottom: 2rem, $right: 2rem);
+    transform: translateX(5rem);
+    width: 2.5rem;
+    height: 2.5rem;
+    @include grid-center;
+    border: none;
+    border-radius: $radius;
+    background-color: $clr-transp-red;
+    color: $clr-white;
+    font-size: 1.5rem;
+    transition: $trans-ease;
+    &:hover {
+        background-color: $clr-red-2;
+    }
+    &.show {
+        transform: translateX(0);
+    }
+}

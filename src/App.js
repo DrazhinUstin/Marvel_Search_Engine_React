@@ -8,7 +8,7 @@ import {
     FavoritesPage,
     ErrorPage,
 } from './pages';
-import { Navbar, PageFooter } from './components';
+import { Navbar, PageFooter, ScrollUpBtn } from './components';
 
 const App = () => {
     return (
@@ -24,6 +24,7 @@ const App = () => {
                 <Route path='*' element={<ErrorPage />} />
             </Routes>
             <PageFooter />
+            <ScrollUpBtn />
         </Router>
     );
 };

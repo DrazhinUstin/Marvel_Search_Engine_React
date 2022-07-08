@@ -12,6 +12,7 @@
 @import 'carousel';
 @import 'accordion';
 @import 'page-footer';
+@import 'scroll-up-btn';
 
 *,
 ::before,
@@ -24,6 +25,10 @@
 *::selection {
     background-color: $clr-blue-2;
     color: $clr-white;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {

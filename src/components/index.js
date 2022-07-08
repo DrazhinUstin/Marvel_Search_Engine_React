@@ -15,6 +15,7 @@ import FavoritesCounter from './FavoritesCounter';
 import Carousel from './Carousel';
 import Accordion from './Accordion';
 import PageFooter from './PageFooter';
+import ScrollUpBtn from './ScrollUpBtn';
 
 export {
     Loading,
@@ -34,4 +35,5 @@ export {
     Carousel,
     Accordion,
     PageFooter,
+    ScrollUpBtn,
 };
