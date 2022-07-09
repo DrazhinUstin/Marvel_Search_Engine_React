@@ -1,5 +1,6 @@
 .single-comic,
-.single-character {
+.single-character,
+.single-creator {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
