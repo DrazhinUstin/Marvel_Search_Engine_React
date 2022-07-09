@@ -1,0 +1,31 @@
+.creators {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 2rem;
+    @include for-size(md) {
+        grid-template-columns: unset;
+    }
+    a {
+        position: relative;
+        display: inline-block;
+        color: $clr-white;
+        font-size: 1.2rem;
+        span {
+            color: $clr-yellow;
+        }
+        &::after {
+            content: '';
+            @include absolute($bottom: 0, $left: 0);
+            width: 0;
+            height: 1px;
+            background-color: $clr-red;
+            transition: $trans-ease-in-out;
+        }
+        &:hover::after {
+            width: 100%;
+        }
+    }
+    li:nth-child(even) a::after {
+        background-color: $clr-blue;
+    }
+}

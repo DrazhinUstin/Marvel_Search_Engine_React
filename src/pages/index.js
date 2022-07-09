@@ -3,6 +3,7 @@ import CharactersPage from './CharactersPage';
 import SingleCharacterPage from './SingleCharacterPage';
 import ComicsPage from './ComicsPage';
 import SingleComicPage from './SingleComicPage';
+import CreatorsPage from './CreatorsPage';
 import FavoritesPage from './FavoritesPage';
 import ErrorPage from './ErrorPage';
 
@@ -12,6 +13,7 @@ export {
     SingleCharacterPage,
     ComicsPage,
     SingleComicPage,
+    CreatorsPage,
     FavoritesPage,
     ErrorPage,
 };

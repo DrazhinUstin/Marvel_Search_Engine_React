@@ -1,7 +1,8 @@
 import image_1 from '../assets/characters.jpg';
 import image_2 from '../assets/characters_2.jpg';
 import image_3 from '../assets/characters_3.jpg';
-import image_4 from '../assets/spider.jpg';
+import image_4 from '../assets/characters_4.jpg';
+import image_5 from '../assets/spider.jpg';
 
 const images = [
     {
@@ -20,6 +21,10 @@ const images = [
         id: 4,
         image: image_4,
     },
+    {
+        id: 5,
+        image: image_5,
+    },
 ];
 
 const navLinks = [
@@ -31,17 +36,22 @@ const navLinks = [
     {
         id: 2,
         title: 'heroes',
-        path: 'characters',
+        path: '/characters',
     },
     {
         id: 3,
         title: 'comics',
-        path: 'comics',
+        path: '/comics',
     },
     {
         id: 4,
+        title: 'creators',
+        path: '/creators',
+    },
+    {
+        id: 5,
         title: 'favorites',
-        path: 'favorites',
+        path: '/favorites',
     },
 ];
 

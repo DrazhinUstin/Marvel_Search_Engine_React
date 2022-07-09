@@ -5,6 +5,7 @@ import {
     SingleCharacterPage,
     ComicsPage,
     SingleComicPage,
+    CreatorsPage,
     FavoritesPage,
     ErrorPage,
 } from './pages';
@@ -20,6 +21,7 @@ const App = () => {
                 <Route path='characters/:id' element={<SingleCharacterPage />} />
                 <Route path='comics' element={<ComicsPage />} />
                 <Route path='comics/:id' element={<SingleComicPage />} />
+                <Route path='creators' element={<CreatorsPage />} />
                 <Route path='favorites' element={<FavoritesPage />} />
                 <Route path='*' element={<ErrorPage />} />
             </Routes>

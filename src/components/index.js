@@ -8,6 +8,7 @@ import FormField from './FormField';
 import ItemsCounter from './ItemsCounter';
 import CharactersContainer from './CharactersContainer';
 import ComicsContainer from './ComicsContainer';
+import CreatorsContainer from './CreatorsContainer';
 import LoadMoreBtn from './LoadMoreBtn';
 import AddToFavoritesBtn from './AddToFavoritesBtn';
 import NoFavorites from './NoFavorites';
@@ -28,6 +29,7 @@ export {
     ItemsCounter,
     CharactersContainer,
     ComicsContainer,
+    CreatorsContainer,
     LoadMoreBtn,
     AddToFavoritesBtn,
     NoFavorites,

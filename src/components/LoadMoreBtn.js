@@ -1,7 +1,7 @@
-const LoadMoreBtn = ({ onClick }) => {
+const LoadMoreBtn = ({ className = 'border-btn', onClick }) => {
     return (
         <div style={{ marginTop: '4rem', textAlign: 'center' }}>
-            <button className='border-btn' onClick={onClick}>
+            <button className={className} onClick={onClick}>
                 load more
             </button>
         </div>
