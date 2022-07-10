@@ -1,12 +1,12 @@
 import { useParams, Link } from 'react-router-dom';
-import useAxios from '../utils/useAxios';
+import useMarvelAPI from '../utils/useMarvelAPI';
 import { Loading, PageHeader, CrumbTrail, AddToFavoritesBtn } from '../components';
 import ErrorPage from '../pages/ErrorPage';
 import image from '../assets/characters_3.jpg';
 
 const SingleComicPage = () => {
     const { id } = useParams();
-    const { isLoading, isError, data } = useAxios(`comics/${id}`);
+    const { isLoading, isError, data } = useMarvelAPI(`comics/${id}`);
 
     if (isLoading) {
         return (
@@ -30,7 +30,8 @@ const SingleComicPage = () => {
         format,
         issueNumber,
         pageCount,
-        characters: { items },
+        characters: { items: characters },
+        creators: { items: creators },
         urls: [{ url }],
     } = data.results[0];
     return (
@@ -55,11 +56,11 @@ const SingleComicPage = () => {
                                 number of pages: <span>{pageCount}</span>
                             </h4>
                         )}
-                        {items[0] && (
+                        {characters[0] && (
                             <>
                                 <h4>characters:</h4>
                                 <div className='btn-container'>
-                                    {items.map(({ resourceURI: source, name }, index) => {
+                                    {characters.map(({ resourceURI: source, name }, index) => {
                                         return (
                                             <Link
                                                 key={index}
@@ -69,6 +70,26 @@ const SingleComicPage = () => {
                                                 className='btn blue'
                                             >
                                                 {name}
+                                            </Link>
+                                        );
+                                    })}
+                                </div>
+                            </>
+                        )}
+                        {creators[0] && (
+                            <>
+                                <h4>creators:</h4>
+                                <div className='btn-container'>
+                                    {creators.map(({ resourceURI: source, name, role }, index) => {
+                                        return (
+                                            <Link
+                                                key={index}
+                                                to={`/creators${source.slice(
+                                                    source.lastIndexOf('/')
+                                                )}`}
+                                                className='btn'
+                                            >
+                                                {name}, {role}
                                             </Link>
                                         );
                                     })}

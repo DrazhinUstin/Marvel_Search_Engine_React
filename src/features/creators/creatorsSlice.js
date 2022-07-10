@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from '../../utils/axios';
+import marvelAPI from '../../utils/marvelAPI';
 
 export const getCreators = createAsyncThunk('creators/getCreators', async (offset, thunkAPI) => {
     try {
@@ -9,7 +9,7 @@ export const getCreators = createAsyncThunk('creators/getCreators', async (offse
         const params = { limit };
         if (name) params.nameStartsWith = name;
         if (offset) params.offset = offset;
-        const response = await axios.get('creators', {
+        const response = await marvelAPI('creators', {
             params,
         });
         return response.data.data;

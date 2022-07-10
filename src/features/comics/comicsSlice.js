@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from '../../utils/axios';
+import marvelAPI from '../../utils/marvelAPI';
 
 export const getComics = createAsyncThunk('comics/getComics', async (offset = 0, thunkAPI) => {
     const params = { orderBy: 'modified' };
@@ -14,7 +14,7 @@ export const getComics = createAsyncThunk('comics/getComics', async (offset = 0,
     if (noVariants) params.noVariants = noVariants;
     if (offset) params.offset = offset;
     try {
-        const response = await axios.get('comics', {
+        const response = await marvelAPI('comics', {
             params,
         });
         return response.data.data;
@@ -51,7 +51,7 @@ const initialState = {
     areFiltersHidden: true,
     filters: initialFilters,
     offset: 0,
-    limit: axios.defaults.params.limit,
+    limit: marvelAPI.defaults.params.limit,
     items: [],
     total: 0,
 };

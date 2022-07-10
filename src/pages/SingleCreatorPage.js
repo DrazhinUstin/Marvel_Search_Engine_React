@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom';
-import useAxios from '../utils/useAxios';
+import useMarvelAPI from '../utils/useMarvelAPI';
 import { Loading, PageHeader, CrumbTrail } from '../components';
 import ErrorPage from './ErrorPage';
 import image from '../assets/characters_4.jpg';
 
 const SingleCreatorPage = () => {
     const { id } = useParams();
-    const { isLoading, isError, data } = useAxios(`creators/${id}`);
+    const { isLoading, isError, data } = useMarvelAPI(`creators/${id}`);
 
     if (isLoading) {
         return (

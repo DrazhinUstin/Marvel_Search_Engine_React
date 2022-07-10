@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom';
-import useAxios from '../utils/useAxios';
+import useMarvelAPI from '../utils/useMarvelAPI';
 import { Loading, PageHeader, CrumbTrail } from '../components';
 import ErrorPage from './ErrorPage';
 
 const SingleCharacterPage = () => {
     const { id } = useParams();
-    const { isLoading, isError, data } = useAxios(`characters/${id}`);
+    const { isLoading, isError, data } = useMarvelAPI(`characters/${id}`);
 
     if (isLoading) {
         return (

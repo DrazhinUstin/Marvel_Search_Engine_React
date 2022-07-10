@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from '../../utils/axios';
+import marvelAPI from '../../utils/marvelAPI';
 
 export const getCharacters = createAsyncThunk('characters/getCharacters', async (url, thunkAPI) => {
     try {
-        const response = await axios.get(url);
+        const response = await marvelAPI(url);
         return response.data.data;
     } catch (error) {
         console.log(error);
@@ -15,7 +15,7 @@ const initialState = {
     isLoading: true,
     name: '',
     offset: 0,
-    limit: axios.defaults.params.limit,
+    limit: marvelAPI.defaults.params.limit,
     items: [],
     total: 0,
 };

@@ -10,12 +10,14 @@ import {
     Accordion,
 } from '../components';
 import { images, faqData } from '../utils/localData';
-import useAxios from '../utils/useAxios';
+import useMarvelAPI from '../utils/useMarvelAPI';
 
 const HomePage = () => {
     const { items: favorites } = useSelector((state) => state.favorites);
-    const { isLoading: firstLoading, data: comics } = useAxios('comics?dateDescriptor=thisWeek');
-    const { isLoading: secondLoading, data: characters } = useAxios('characters');
+    const { isLoading: firstLoading, data: comics } = useMarvelAPI(
+        'comics?dateDescriptor=thisWeek'
+    );
+    const { isLoading: secondLoading, data: characters } = useMarvelAPI('characters');
     return (
         <>
             {(firstLoading || secondLoading) && <Loading />}

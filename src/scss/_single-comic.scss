@@ -26,9 +26,12 @@
     .btn-container {
         justify-content: unset;
         gap: 0.5rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         .btn {
             letter-spacing: unset;
+        }
+        &:last-of-type {
+            margin-bottom: 1.5rem;
         }
     }
 }

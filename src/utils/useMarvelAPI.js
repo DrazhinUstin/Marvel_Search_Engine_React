@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import axios from './axios';
+import marvelAPI from './marvelAPI';
 
-const useAxios = (url) => {
+const useMarvelAPI = (url) => {
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
     const [data, setData] = useState(null);
@@ -10,7 +10,7 @@ const useAxios = (url) => {
         const getData = async () => {
             setIsLoading(true);
             try {
-                const response = await axios.get(url);
+                const response = await marvelAPI(url);
                 setData(response.data.data);
                 setIsError(false);
             } catch (error) {
@@ -24,4 +24,4 @@ const useAxios = (url) => {
     return { isLoading, isError, data };
 };
 
-export default useAxios;
+export default useMarvelAPI;
