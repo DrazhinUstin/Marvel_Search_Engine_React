@@ -1,11 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useLocation, NavLink } from 'react-router-dom';
 import { navLinks } from '../utils/localData';
 import { FavoritesCounter } from './';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef(null);
+    const location = useLocation();
 
     useEffect(() => {
         const menu = menuRef.current;
@@ -15,6 +16,7 @@ const Navbar = () => {
             document.body.style.overflow = 'hidden';
             const { y } = menuParent.getBoundingClientRect();
             menu.style.top = `${menuParent.offsetHeight + y}px`;
+            if (location.pathname === '/') menu.style.top = 0;
             menuLinks.forEach((link, index) => {
                 link.style.animation = `surprise 0.25s ease-in-out ${0.25 + index / 5}s forwards`;
             });

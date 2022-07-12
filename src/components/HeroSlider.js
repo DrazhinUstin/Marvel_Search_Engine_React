@@ -39,7 +39,7 @@ const HeroSlider = ({ data }) => {
         <section className='hero-slider' ref={sliderRef}>
             <article className='hero-slider-intro'>
                 <Logo />
-                <Link to='/characters' className='border-btn'>
+                <Link to='/characters' className='transparent-btn'>
                     start search
                 </Link>
             </article>

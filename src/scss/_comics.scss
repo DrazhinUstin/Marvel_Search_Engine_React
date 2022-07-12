@@ -17,7 +17,7 @@
             overflow: hidden;
             @include grid-center;
             padding: 0 0.5rem;
-            background-color: $clr-transp-red;
+            background-color: $clr-transp-red-2;
             text-align: center;
             transition: $trans-ease;
             h4 {
@@ -39,7 +39,7 @@
         &:nth-child(even) {
             border-color: $clr-blue-2;
             footer {
-                background-color: $clr-transp-blue;
+                background-color: $clr-transp-blue-2;
                 .btn:hover {
                     color: $clr-blue-2;
                 }

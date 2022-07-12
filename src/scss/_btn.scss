@@ -49,3 +49,20 @@
         }
     }
 }
+
+.transparent-btn {
+    @extend %btn-default;
+    padding: 0.75rem 1rem;
+    background-color: $clr-transp-red;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    &:hover {
+        background-color: $clr-red-2;
+    }
+    &.blue {
+        background-color: $clr-transp-blue;
+        &:hover {
+            background-color: $clr-blue;
+        }
+    }
+}

@@ -61,7 +61,7 @@ const SingleCharacterPage = () => {
                             rel='noopener noreferrer'
                             className='border-btn yellow'
                         >
-                            visit marvel profile
+                            view on marvel
                         </a>
                     </article>
                 </div>

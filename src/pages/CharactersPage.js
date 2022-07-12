@@ -45,7 +45,7 @@ const CharactersPage = () => {
                 <form className='form-flex' onSubmit={handleSubmit}>
                     <input
                         type='text'
-                        placeholder='Hero name starts with...'
+                        placeholder='Enter the name of the hero'
                         name='name'
                         value={name}
                         onChange={handleChange}

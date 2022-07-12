@@ -1,8 +1,10 @@
 .hero-slider {
     position: relative;
-    min-height: calc(100vh - $navbar-height);
+    min-height: 100vh;
     @include grid-center;
     overflow: hidden;
+    margin-top: -$navbar-height;
+    background-color: $clr-primary;
     &-intro {
         text-align: center;
         z-index: 2;

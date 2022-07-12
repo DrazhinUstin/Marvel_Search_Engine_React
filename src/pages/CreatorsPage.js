@@ -39,7 +39,7 @@ const CreatorsPage = () => {
                         name='name'
                         value={name}
                         onChange={handleChange}
-                        placeholder='Creator name starts with...'
+                        placeholder='Enter the name of the creator'
                     />
                     <button type='submit' className='btn'>
                         <FaSearch />

@@ -55,12 +55,12 @@ const ComicsPage = () => {
                 </div>
                 <form className={`form ${areFiltersHidden && 'hide'}`} onSubmit={handleSubmit}>
                     <FormField
-                        label='Enter the first letters of the comic title or the full title:'
+                        label='Enter the title of the comic:'
                         type='text'
                         name='title'
                         value={filters.title}
                         onChange={handleChange}
-                        placeholder='Comic title starts with'
+                        placeholder='Comic title starts with...'
                     />
                     <FormField
                         label='Enter the issue number of the comic:'

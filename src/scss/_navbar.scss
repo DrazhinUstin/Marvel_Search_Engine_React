@@ -7,6 +7,7 @@
     }
     &-menu {
         display: flex;
+        z-index: 999;
         a {
             position: relative;
             width: 8rem;
@@ -34,6 +35,7 @@
         display: none;
         border: none;
         background-color: inherit;
+        z-index: 999;
     }
     @include for-size(md) {
         .section-center {
@@ -48,7 +50,6 @@
             background-color: $clr-transp-primary;
             transition: $trans-ease-in-out;
             transition-property: transform;
-            z-index: 999;
             &.open {
                 transform: translateX(0);
             }

@@ -102,7 +102,7 @@ const SingleComicPage = () => {
                             target='_blank'
                             rel='noopener noreferrer'
                         >
-                            visit marvel profile
+                            view on marvel
                         </a>
                     </article>
                 </div>

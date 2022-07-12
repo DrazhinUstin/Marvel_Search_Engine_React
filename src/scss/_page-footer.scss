@@ -23,7 +23,7 @@
                 @include absolute($top: -0.25rem, $right: -0.75rem);
             }
         }
-        li:nth-child(even) a:hover {
+        li:nth-child(odd) a:hover {
             background-color: $clr-blue-2;
         }
     }

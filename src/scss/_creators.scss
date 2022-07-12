@@ -25,7 +25,7 @@
             width: 100%;
         }
     }
-    li:nth-child(even) a::after {
+    li:nth-child(odd) a::after {
         background-color: $clr-blue;
     }
 }
