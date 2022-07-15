@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { FaTimesCircle } from 'react-icons/fa';
 import {
     getComics,
     toggleFilters,
     updateFilters,
     clearFilters,
+    setSpecificItem,
 } from '../features/comics/comicsSlice';
 import {
     Loading,
@@ -17,13 +19,12 @@ import {
 import image from '../assets/characters_3.jpg';
 
 const ComicsPage = () => {
-    const { isLoading, areFiltersHidden, filters, offset, limit, items, total } = useSelector(
-        (state) => state.comics
-    );
+    const { isLoading, areFiltersHidden, filters, offset, limit, items, total, specificItem } =
+        useSelector((state) => state.comics);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (items.length) return;
+        if (items.length || specificItem) return;
         dispatch(getComics());
     }, []);
 
@@ -48,6 +49,20 @@ const ComicsPage = () => {
                 <CrumbTrail title='comics' />
             </PageHeader>
             <section className='section section-center'>
+                {specificItem && (
+                    <div style={{ marginBottom: '4rem' }}>
+                        <button
+                            className='btn flex blue'
+                            onClick={() => {
+                                dispatch(setSpecificItem(null));
+                                dispatch(getComics());
+                            }}
+                        >
+                            <FaTimesCircle />
+                            {specificItem.name}
+                        </button>
+                    </div>
+                )}
                 <div style={{ marginBottom: '4rem' }}>
                     <button className='border-btn blue' onClick={() => dispatch(toggleFilters())}>
                         {areFiltersHidden ? 'show filters' : 'hide filters'}

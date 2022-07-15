@@ -10,6 +10,11 @@
     text-transform: capitalize;
     letter-spacing: $spacing;
     transition: $trans-ease;
+    &.flex {
+        display: inline-flex;
+        align-items: center;
+        column-gap: 0.375rem;
+    }
 }
 
 .btn {

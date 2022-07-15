@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import useMarvelAPI from '../utils/useMarvelAPI';
-import { Loading, PageHeader, CrumbTrail } from '../components';
+import { Loading, PageHeader, CrumbTrail, WatchComicsBtn } from '../components';
 import ErrorPage from './ErrorPage';
 import image from '../assets/characters_4.jpg';
 
@@ -24,7 +24,7 @@ const SingleCreatorPage = () => {
     }
 
     const {
-        fullName,
+        fullName: name,
         thumbnail: { path, extension },
         comics: { available: comics },
         series: { available: series },
@@ -35,12 +35,12 @@ const SingleCreatorPage = () => {
     return (
         <>
             <PageHeader title='creators area' image={image}>
-                <CrumbTrail title={fullName} link={{ path: '/creators', title: 'creators' }} />
+                <CrumbTrail title={name} link={{ path: '/creators', title: 'creators' }} />
             </PageHeader>
             <section className='section section-center'>
-                <h2 className='section-title'>{fullName}</h2>
+                <h2 className='section-title'>{name}</h2>
                 <div className='single-creator'>
-                    <img src={`${path}.${extension}`} alt={fullName} />
+                    <img src={`${path}.${extension}`} alt={name} />
                     <article>
                         <h4>
                             Comics: <span>{comics}</span>
@@ -64,6 +64,9 @@ const SingleCreatorPage = () => {
                         </a>
                     </article>
                 </div>
+                {comics > 0 && (
+                    <WatchComicsBtn item={{ id, name, path: `creators/${id}/comics` }} />
+                )}
             </section>
         </>
     );

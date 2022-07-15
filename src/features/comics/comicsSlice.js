@@ -3,8 +3,10 @@ import marvelAPI from '../../utils/marvelAPI';
 
 export const getComics = createAsyncThunk('comics/getComics', async (offset = 0, thunkAPI) => {
     const params = { orderBy: 'modified' };
-    const { title, issueNumber, startYear, format, formatType, dateDescriptor, noVariants } =
-        thunkAPI.getState().comics.filters;
+    const {
+        filters: { title, issueNumber, startYear, format, formatType, dateDescriptor, noVariants },
+        specificItem,
+    } = thunkAPI.getState().comics;
     if (title) params.titleStartsWith = title;
     if (issueNumber) params.issueNumber = issueNumber;
     if (startYear) params.startYear = startYear;
@@ -14,7 +16,7 @@ export const getComics = createAsyncThunk('comics/getComics', async (offset = 0,
     if (noVariants) params.noVariants = noVariants;
     if (offset) params.offset = offset;
     try {
-        const response = await marvelAPI('comics', {
+        const response = await marvelAPI(specificItem ? specificItem.path : 'comics', {
             params,
         });
         return response.data.data;
@@ -54,6 +56,7 @@ const initialState = {
     limit: marvelAPI.defaults.params.limit,
     items: [],
     total: 0,
+    specificItem: null,
 };
 
 const comicsSlice = createSlice({
@@ -69,6 +72,14 @@ const comicsSlice = createSlice({
         },
         clearFilters(state) {
             state.filters = initialFilters;
+        },
+        setSpecificItem(state, { payload }) {
+            return {
+                ...state,
+                areFiltersHidden: true,
+                filters: initialFilters,
+                specificItem: payload || null,
+            };
         },
     },
     extraReducers: {
@@ -96,5 +107,5 @@ const comicsSlice = createSlice({
     },
 });
 
-export const { toggleFilters, updateFilters, clearFilters } = comicsSlice.actions;
+export const { toggleFilters, updateFilters, clearFilters, setSpecificItem } = comicsSlice.actions;
 export default comicsSlice.reducer;

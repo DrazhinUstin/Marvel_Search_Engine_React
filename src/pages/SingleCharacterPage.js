@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import useMarvelAPI from '../utils/useMarvelAPI';
-import { Loading, PageHeader, CrumbTrail } from '../components';
+import { Loading, PageHeader, CrumbTrail, WatchComicsBtn } from '../components';
 import ErrorPage from './ErrorPage';
 
 const SingleCharacterPage = () => {
@@ -65,6 +65,9 @@ const SingleCharacterPage = () => {
                         </a>
                     </article>
                 </div>
+                {comics > 0 && (
+                    <WatchComicsBtn item={{ id, name, path: `characters/${id}/comics` }} />
+                )}
             </section>
         </>
     );

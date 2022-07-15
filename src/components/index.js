@@ -10,6 +10,7 @@ import CharactersContainer from './CharactersContainer';
 import ComicsContainer from './ComicsContainer';
 import CreatorsContainer from './CreatorsContainer';
 import LoadMoreBtn from './LoadMoreBtn';
+import WatchComicsBtn from './WatchComicsBtn';
 import AddToFavoritesBtn from './AddToFavoritesBtn';
 import NoFavorites from './NoFavorites';
 import FavoritesCounter from './FavoritesCounter';
@@ -31,6 +32,7 @@ export {
     ComicsContainer,
     CreatorsContainer,
     LoadMoreBtn,
+    WatchComicsBtn,
     AddToFavoritesBtn,
     NoFavorites,
     FavoritesCounter,
