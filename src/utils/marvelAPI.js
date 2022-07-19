@@ -2,7 +2,7 @@ import axios from 'axios';
 import md5 from 'md5';
 
 const marvelAPI = axios.create({
-    baseURL: 'http://gateway.marvel.com/v1/public/',
+    baseURL: 'https://gateway.marvel.com/v1/public/',
     params: {
         limit: 10,
     },

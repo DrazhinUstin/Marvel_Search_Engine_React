@@ -12,7 +12,7 @@ const CreatorsPage = () => {
     useEffect(() => {
         if (items.length) return;
         dispatch(getCreators());
-    }, []);
+    }, [items, dispatch]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -40,6 +40,7 @@ const CreatorsPage = () => {
                         value={name}
                         onChange={handleChange}
                         placeholder='Enter the name of the creator'
+                        required
                     />
                     <button type='submit' className='btn'>
                         <FaSearch />

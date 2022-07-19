@@ -1,15 +1,22 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import marvelAPI from '../../utils/marvelAPI';
 
-export const getCharacters = createAsyncThunk('characters/getCharacters', async (url, thunkAPI) => {
-    try {
-        const response = await marvelAPI(url);
-        return response.data.data;
-    } catch (error) {
-        console.log(error);
-        return thunkAPI.rejectWithValue(error.response.data);
+export const getCharacters = createAsyncThunk(
+    'characters/getCharacters',
+    async (offset, thunkAPI) => {
+        const params = {};
+        const { name } = thunkAPI.getState().characters;
+        if (name) params.nameStartsWith = name;
+        if (offset) params.offset = offset;
+        try {
+            const response = await marvelAPI('characters', { params });
+            return response.data.data;
+        } catch (error) {
+            console.log(error);
+            return thunkAPI.rejectWithValue(error.response.data);
+        }
     }
-});
+);
 
 const initialState = {
     isLoading: true,

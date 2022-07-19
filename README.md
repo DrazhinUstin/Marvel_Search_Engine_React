@@ -1,4 +1,4 @@
-# Marvel Search Engine 2.0
+# Marvel Search Engine
 
 Comics search and view application built with [Create React App](https://github.com/facebook/create-react-app).
 

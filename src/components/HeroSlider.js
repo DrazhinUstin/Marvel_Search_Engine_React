@@ -33,7 +33,7 @@ const HeroSlider = ({ data }) => {
             clearTimeout(timerId);
             window.removeEventListener('visibilitychange', handleVisibilityChange);
         };
-    }, [index]);
+    }, [data, index]);
 
     return (
         <section className='hero-slider' ref={sliderRef}>

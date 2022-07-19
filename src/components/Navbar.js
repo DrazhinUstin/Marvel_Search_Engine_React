@@ -26,7 +26,7 @@ const Navbar = () => {
                 link.style.animation = '';
             });
         }
-    }, [isMenuOpen]);
+    }, [isMenuOpen, location]);
 
     return (
         <nav className='navbar'>
@@ -39,6 +39,7 @@ const Navbar = () => {
                                 to={path}
                                 className={({ isActive }) => (isActive ? 'active' : null)}
                                 onClick={() => setIsMenuOpen(false)}
+                                end
                             >
                                 {title}
                                 {title === 'favorites' && <FavoritesCounter />}

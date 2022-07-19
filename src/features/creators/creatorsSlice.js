@@ -2,13 +2,13 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import marvelAPI from '../../utils/marvelAPI';
 
 export const getCreators = createAsyncThunk('creators/getCreators', async (offset, thunkAPI) => {
+    const {
+        creators: { name, limit },
+    } = thunkAPI.getState();
+    const params = { limit };
+    if (name) params.nameStartsWith = name;
+    if (offset) params.offset = offset;
     try {
-        const {
-            creators: { name, limit },
-        } = thunkAPI.getState();
-        const params = { limit };
-        if (name) params.nameStartsWith = name;
-        if (offset) params.offset = offset;
         const response = await marvelAPI('creators', {
             params,
         });

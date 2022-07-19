@@ -23,7 +23,7 @@ const Carousel = ({ data }) => {
         init();
         window.addEventListener('resize', init);
         return () => window.removeEventListener('resize', init);
-    }, [step, slidesOnScreen]);
+    }, [step, slidesOnScreen]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const switchSlide = () => {
         if (step > data.length - slidesOnScreen) {

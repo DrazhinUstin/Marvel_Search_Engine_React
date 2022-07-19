@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Logo, FavoritesCounter } from './';
 import { navLinks } from '../utils/localData';
+import { FaGithub } from 'react-icons/fa';
 
 const PageFooter = () => {
     return (
@@ -12,16 +13,31 @@ const PageFooter = () => {
                         {navLinks.map(({ id, title, path }) => {
                             return (
                                 <li key={id}>
-                                    <Link to={path}>
+                                    <NavLink
+                                        to={path}
+                                        className={({ isActive }) => (isActive ? 'active' : null)}
+                                        end
+                                    >
                                         {title}
                                         {title === 'favorites' && <FavoritesCounter />}
-                                    </Link>
+                                    </NavLink>
                                 </li>
                             );
                         })}
                     </ul>
                 </div>
                 <div className='page-footer-underline'></div>
+                <div className='btn-container'>
+                    <a
+                        href='https://github.com/DrazhinUstin/Marvel_Search_Engine_React'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='btn flex gray'
+                    >
+                        <FaGithub />
+                        GitHub
+                    </a>
+                </div>
                 <p>
                     © {new Date().getFullYear()} Marvel Search Engine
                     <br />

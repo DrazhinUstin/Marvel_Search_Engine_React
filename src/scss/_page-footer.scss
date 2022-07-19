@@ -16,14 +16,16 @@
             color: $clr-white;
             text-transform: uppercase;
             letter-spacing: $spacing;
-            &:hover {
+            &:hover,
+            &.active {
                 background-color: $clr-red-2;
             }
             .favorites-counter {
                 @include absolute($top: -0.25rem, $right: -0.75rem);
             }
         }
-        li:nth-child(odd) a:hover {
+        li:nth-child(odd) a:hover,
+        li:nth-child(odd) a.active {
             background-color: $clr-blue-2;
         }
     }
@@ -32,6 +34,10 @@
         height: 0.25rem;
         margin: 2rem auto;
         background-color: $clr-blue-2;
+    }
+    .btn-container {
+        justify-content: center;
+        margin-bottom: 1rem;
     }
     p {
         text-align: center;

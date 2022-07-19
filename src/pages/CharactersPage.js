@@ -12,21 +12,13 @@ const CharactersPage = () => {
 
     useEffect(() => {
         if (items.length) return;
-        dispatch(getCharacters('characters'));
-    }, []);
+        dispatch(getCharacters());
+    }, [items, dispatch]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!name) return;
-        dispatch(getCharacters(`characters?nameStartsWith=${name}`));
-    };
-
-    const handleClick = () => {
-        dispatch(
-            getCharacters(
-                `characters?${name ? `nameStartsWith=${name}&` : ''}offset=${offset + limit}`
-            )
-        );
+        dispatch(getCharacters());
     };
 
     const handleChange = (e) => {
@@ -49,13 +41,16 @@ const CharactersPage = () => {
                         name='name'
                         value={name}
                         onChange={handleChange}
+                        required
                     />
                     <button type='submit' className='btn'>
                         <FaSearch />
                     </button>
                 </form>
                 <CharactersContainer />
-                {total > items.length && <LoadMoreBtn onClick={handleClick} />}
+                {total > items.length && (
+                    <LoadMoreBtn onClick={() => dispatch(getCharacters(offset + limit))} />
+                )}
             </section>
         </>
     );

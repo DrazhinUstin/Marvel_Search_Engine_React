@@ -26,7 +26,7 @@ const ComicsPage = () => {
     useEffect(() => {
         if (items.length || specificItem) return;
         dispatch(getComics());
-    }, []);
+    }, [items, specificItem, dispatch]);
 
     const handleSubmit = (e) => {
         e.preventDefault();

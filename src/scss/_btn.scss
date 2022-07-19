@@ -29,6 +29,12 @@
             background-color: $clr-blue-2;
         }
     }
+    &.gray {
+        background-color: $clr-gray;
+        &:hover {
+            background-color: $clr-gray-2;
+        }
+    }
 }
 
 .border-btn {

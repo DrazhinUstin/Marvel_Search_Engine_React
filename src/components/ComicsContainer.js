@@ -7,14 +7,14 @@ const ComicsContainer = ({ items, counter = true }) => {
         <>
             {counter && <ItemsCounter items={items} />}
             <div className='comics'>
-                {items.map((item) => {
+                {items.map((item, index) => {
                     const {
                         id,
                         title,
                         thumbnail: { path, extension },
                     } = item;
                     return (
-                        <article key={id}>
+                        <article key={index}>
                             <img src={`${path}.${extension}`} alt={title} />
                             <footer>
                                 <div>
