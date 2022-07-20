@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import marvelAPI from '../../utils/marvelAPI';
+import { toast } from 'react-toastify';
 
 export const getCreators = createAsyncThunk('creators/getCreators', async (offset, thunkAPI) => {
     const {
@@ -43,7 +44,7 @@ const creatorsSlice = createSlice({
         [getCreators.fulfilled]: (state, { payload: { total, offset, results } }) => {
             state.isLoading = false;
             if (!results.length) {
-                alert('Sorry, nothing was found for your search...');
+                toast.warning('Sorry, nothing was found for your search...');
                 return;
             }
             state.total = total;
@@ -56,7 +57,7 @@ const creatorsSlice = createSlice({
         },
         [getCreators.rejected]: (state, { payload }) => {
             state.isLoading = false;
-            alert(payload?.status || 'Sorry, there was an error');
+            toast.error(payload?.status || 'Sorry, there was an error');
         },
     },
 });

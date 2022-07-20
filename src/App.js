@@ -11,6 +11,7 @@ import {
     ErrorPage,
 } from './pages';
 import { Navbar, PageFooter, ScrollUpBtn } from './components';
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
     return (
@@ -29,6 +30,7 @@ const App = () => {
             </Routes>
             <PageFooter />
             <ScrollUpBtn />
+            <ToastContainer position='top-center' theme='dark' />
         </Router>
     );
 };

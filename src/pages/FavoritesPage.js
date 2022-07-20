@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { PageHeader, NoFavorites, CrumbTrail, ComicsContainer } from '../components';
-import { clearFavorites } from '../features/favorites/favoritesSlice';
+import { removeItem, clearFavorites } from '../features/favorites/favoritesSlice';
 import image from '../assets/spider.jpg';
 
 const FavoritesPage = () => {
@@ -18,7 +18,7 @@ const FavoritesPage = () => {
                     <NoFavorites />
                 ) : (
                     <>
-                        <ComicsContainer items={items} />
+                        <ComicsContainer items={items} func={(id) => dispatch(removeItem(id))} />
                         <div className='btn-container' style={{ marginTop: '4rem' }}>
                             <Link to='/comics' className='border-btn blue'>
                                 add more

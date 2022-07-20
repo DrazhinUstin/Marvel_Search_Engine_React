@@ -59,7 +59,7 @@ const faqData = [
     {
         title: 'What is this app about?',
         article:
-            '<p>This application is based on the MARVEL database and provides a large amount of data related to the MARVEL universe. Characters, comics, latest releases - all this can be found here with a detailed description. You can get up to 100 items in one request.</p>',
+            '<p>This application is based on the MARVEL database and provides a large amount of data related to the MARVEL universe. Characters, comics, creators, latest releases - all this can be found here with a detailed description.</p>',
     },
     {
         title: 'What can i do in the heroes area?',
@@ -70,6 +70,11 @@ const faqData = [
         title: 'What can i do in the comics area?',
         article:
             '<p>In the comics area you can watch various comics published by MARVEL. You can search for a specific comic using special filters and get information about it.</p><p>As with the characters, not all comics have a detailed description and image due to the lack of this data in the MARVEL database.</p>',
+    },
+    {
+        title: 'What are the creators?',
+        article:
+            '<p>A certain number of people take part in the creation of any comic, each of whom performs a specific task. This is a writer, a penciler, a colorist, a letterer, an editor and others. If you want to watch comics by a specific author, you can do it in the creators area.</p>',
     },
     {
         title: 'What are the favorites?',

@@ -1,6 +1,4 @@
-import { NavLink } from 'react-router-dom';
-import { Logo, FavoritesCounter } from './';
-import { navLinks } from '../utils/localData';
+import { Logo, NavLinks } from './';
 import { FaGithub } from 'react-icons/fa';
 
 const PageFooter = () => {
@@ -9,25 +7,10 @@ const PageFooter = () => {
             <div className='section section-center'>
                 <div className='page-footer-container'>
                     <Logo />
-                    <ul className='page-footer-links'>
-                        {navLinks.map(({ id, title, path }) => {
-                            return (
-                                <li key={id}>
-                                    <NavLink
-                                        to={path}
-                                        className={({ isActive }) => (isActive ? 'active' : null)}
-                                        end
-                                    >
-                                        {title}
-                                        {title === 'favorites' && <FavoritesCounter />}
-                                    </NavLink>
-                                </li>
-                            );
-                        })}
-                    </ul>
+                    <NavLinks className='page-footer-links' />
                 </div>
                 <div className='page-footer-underline'></div>
-                <div className='btn-container'>
+                <div className='btn-container center'>
                     <a
                         href='https://github.com/DrazhinUstin/Marvel_Search_Engine_React'
                         target='_blank'

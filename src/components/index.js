@@ -1,5 +1,6 @@
 import Loading from './Loading';
 import Navbar from './Navbar';
+import NavLinks from './NavLinks';
 import HeroSlider from './HeroSlider';
 import PageHeader from './PageHeader';
 import CrumbTrail from './CrumbTrail';
@@ -22,6 +23,7 @@ import ScrollUpBtn from './ScrollUpBtn';
 export {
     Loading,
     Navbar,
+    NavLinks,
     HeroSlider,
     PageHeader,
     CrumbTrail,

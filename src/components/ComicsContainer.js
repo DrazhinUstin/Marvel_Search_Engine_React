@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import ItemsCounter from './ItemsCounter';
 
-const ComicsContainer = ({ items, counter = true }) => {
+const ComicsContainer = ({ items, counter = true, func }) => {
     if (!items.length) return null;
     return (
         <>
@@ -19,9 +19,16 @@ const ComicsContainer = ({ items, counter = true }) => {
                             <footer>
                                 <div>
                                     <h4>{title}</h4>
-                                    <Link to={`/comics/${id}`} className='btn'>
-                                        watch
-                                    </Link>
+                                    <div className='btn-container center'>
+                                        <Link to={`/comics/${id}`} className='btn'>
+                                            watch
+                                        </Link>
+                                        {func && (
+                                            <button className='btn' onClick={() => func(id)}>
+                                                delete
+                                            </button>
+                                        )}
+                                    </div>
                                 </div>
                             </footer>
                         </article>

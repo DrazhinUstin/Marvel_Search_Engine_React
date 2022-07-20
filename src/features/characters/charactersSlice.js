@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import marvelAPI from '../../utils/marvelAPI';
+import { toast } from 'react-toastify';
 
 export const getCharacters = createAsyncThunk(
     'characters/getCharacters',
@@ -12,7 +13,6 @@ export const getCharacters = createAsyncThunk(
             const response = await marvelAPI('characters', { params });
             return response.data.data;
         } catch (error) {
-            console.log(error);
             return thunkAPI.rejectWithValue(error.response.data);
         }
     }
@@ -43,7 +43,7 @@ const charactersSlice = createSlice({
         [getCharacters.fulfilled]: (state, { payload: { offset, total, results } }) => {
             state.isLoading = false;
             if (!results.length) {
-                alert('Sorry, nothing was found for your search...');
+                toast.warning('Sorry, nothing was found for your search...');
                 return;
             }
             state.offset = offset;
@@ -56,7 +56,7 @@ const charactersSlice = createSlice({
         },
         [getCharacters.rejected]: (state, { payload }) => {
             state.isLoading = false;
-            alert(payload?.status || 'Sorry, there was an error');
+            toast.error(payload?.status || 'Sorry, there was an error');
         },
     },
 });

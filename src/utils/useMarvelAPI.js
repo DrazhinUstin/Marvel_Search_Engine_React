@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import marvelAPI from './marvelAPI';
+import { toast } from 'react-toastify';
 
 const useMarvelAPI = (url) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -15,6 +16,7 @@ const useMarvelAPI = (url) => {
                 setIsError(false);
             } catch (error) {
                 setIsError(true);
+                toast.error(error.response.data?.status || 'Sorry, there was an error');
             }
             setIsLoading(false);
         };

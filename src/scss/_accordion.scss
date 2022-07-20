@@ -13,6 +13,9 @@
             align-items: center;
             font-size: 1.2rem;
             cursor: pointer;
+            @include for-size(sm) {
+                font-size: 1rem;
+            }
             svg {
                 transition: $trans-ease;
             }

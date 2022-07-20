@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import marvelAPI from '../../utils/marvelAPI';
+import { toast } from 'react-toastify';
 
 export const getComics = createAsyncThunk('comics/getComics', async (offset = 0, thunkAPI) => {
     const params = { orderBy: 'modified' };
@@ -89,7 +90,7 @@ const comicsSlice = createSlice({
         [getComics.fulfilled]: (state, { payload: { results, total, offset } }) => {
             state.isLoading = false;
             if (!results.length) {
-                alert('Sorry, nothing was found for your search...');
+                toast.warning('Sorry, nothing was found for your search...');
                 return;
             }
             state.offset = offset;
@@ -102,7 +103,7 @@ const comicsSlice = createSlice({
         },
         [getComics.rejected]: (state, { payload }) => {
             state.isLoading = false;
-            alert(payload?.status || 'Sorry, there was an error');
+            toast.error(payload?.status || 'Sorry, there was an error');
         },
     },
 });

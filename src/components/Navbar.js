@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { useLocation, NavLink } from 'react-router-dom';
-import { navLinks } from '../utils/localData';
-import { FavoritesCounter } from './';
+import { useLocation } from 'react-router-dom';
+import { NavLinks } from './';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,22 +30,11 @@ const Navbar = () => {
     return (
         <nav className='navbar'>
             <div className='section-center'>
-                <div className={`navbar-menu ${isMenuOpen && 'open'}`} ref={menuRef}>
-                    {navLinks.map(({ id, title, path }) => {
-                        return (
-                            <NavLink
-                                key={id}
-                                to={path}
-                                className={({ isActive }) => (isActive ? 'active' : null)}
-                                onClick={() => setIsMenuOpen(false)}
-                                end
-                            >
-                                {title}
-                                {title === 'favorites' && <FavoritesCounter />}
-                            </NavLink>
-                        );
-                    })}
-                </div>
+                <NavLinks
+                    className={`navbar-menu ${isMenuOpen && 'open'}`}
+                    reference={menuRef}
+                    onClick={() => setIsMenuOpen(false)}
+                />
                 <button
                     className={`navbar-toggle-btn ${isMenuOpen && 'active'}`}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
